@@ -1,0 +1,22 @@
+body {
+    background-color: #333333;
+    color: white;
+}
+
+p {
+    color: red;
+}
+
+div p {
+    color: blue;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: normal;
+    color: violet;
+}
+
+div {
+    border-top-width: 3px;
+}

@@ -1,0 +1,18 @@
+.float-frame {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow: hidden;
+    
+}
+
+.float-unit {
+    width: 50px;
+    background: #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+    float: left;
+}
