@@ -1,4 +1,4 @@
-예시 1
+// 예시 1
 
 var cond = false;
 
