@@ -13,7 +13,7 @@
 ----------------------------------------------------------------------
 CSS 선택자
 
-* document.querySelector : CSS 선택자를 기반으로 엘리먼트를 선택하는 메서드 -->
+* document.querySelector : CSS 선택자를 기반으로 엘리먼트를 선택하는 메서드 
     eg: document.querySelector("p");
 * document.querySelectorAll : 위 복수형 (엘리먼트 모두 선택)
 * CSS 선택자를 작성할 때 ID를 기반으로 선택하려면 "#"을 사용
