@@ -1,0 +1,17 @@
+여러 데이터를 순서대로 저장할 수 있는 배열과, 같은 코드를 여러 번 반복할 수 있는 반복문은 같이 사용시 효율이 좋다
+예시:
+<!Doctype html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>fruits</h1>
+    <script>
+        var coworkers = ['apple','banana','carrot','durian'];
+        for(var i = 0; i < coworkers.length; i = i + 1){   //배열 수에따라 <li>갯수가 유연하게 달라짐 (.length)
+           document.write('<li><a href= "http://a.com/' +coworkers[i]+'">'+coworkers[i]+'</a></li>');
+        }
+    </script>
+</body>
+
+
