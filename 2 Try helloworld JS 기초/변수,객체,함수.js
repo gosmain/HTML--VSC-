@@ -2,7 +2,7 @@ var a = b; // 변수
 
 var man = {name: "홍길동", age: 20, height: 180}; //객체(하나의 변수 속의 여러 복잡한 정보)
 
-function Sum(arg1, arg2) {   //(자바의 메서드)
+function Sum(arg1, arg2) {   
     var result = arg1 +arg2;
     return result;
 } //함수 정의하기

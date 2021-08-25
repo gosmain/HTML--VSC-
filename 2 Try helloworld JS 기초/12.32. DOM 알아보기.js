@@ -11,12 +11,4 @@
 * getAttribute(), setAttribute() 메서드는 엘리먼트의 속성 값을 얻어옴 <get은 인자 한개(속성이름) set은 인자 두개(속성 이름과 속성값)>
 (src와 달리 input 태그의 값 속성은 getAttribute 메서드로 잘 동작하지 않고 null 이라고 표시)
 ----------------------------------------------------------------------
-CSS 선택자
 
-* document.querySelector : CSS 선택자를 기반으로 엘리먼트를 선택하는 메서드 
-    eg: document.querySelector("p");
-* document.querySelectorAll : 위 복수형 (엘리먼트 모두 선택)
-* CSS 선택자를 작성할 때 ID를 기반으로 선택하려면 "#"을 사용
-* (태그) 이름을 기반으로 선택하려면 이름만 작성
-* (클래스)를 기반으로 선택하려면 마침표를 사용
-* (여러 개)를 선택하려면 쉼표를 사용하여 구분

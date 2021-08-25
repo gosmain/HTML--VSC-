@@ -11,9 +11,9 @@
 ----------------------------------------------------------------------------------------------
 버튼 예시
 
-<input id="night_day" type="button" value="night"></input>           //버튼 생성
-<script>
-if(document.querySelector('#night_day').value === 'night') {         //버튼의 value===night이면,
+<input id="night_day" type="button" value="night" onclick="                 //버튼 생성
+
+if(document.querySelector('#night_day').value === 'night') {       //버튼의 value===night이면,
   document.querySelector('body').style.backgroundColor = 'black';  //배경색을 검은색으로
   document.querySelector('body').style.color = 'white';            //글씨색을 하얀색으로
   document.querySelector('#night_day').value = 'day';              //버튼의 value는 day로 변경
@@ -23,7 +23,7 @@ else {                                                             //버튼의 v
   document.querySelector('body').style.color = 'black';            //글씨색을 검은색으로
   document.querySelector('#night_day').value = 'night';            //버튼의 value는 night로 변경
 }
-</script>
+">
 
 ---------------------------------------------------------------------------------------------
 //예시 1:
