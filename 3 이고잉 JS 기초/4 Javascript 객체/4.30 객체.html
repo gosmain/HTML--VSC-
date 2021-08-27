@@ -1,0 +1,31 @@
+객체(Object)
+var man = {name: "홍길동", age: 20, height: 180}  //객체(하나의 변수 속의 여러 복잡한 정보)
+
+함수(function)가 객체의 속성 값이 될 경우 그 함수를 메서드(method)라고 부름
+<script>
+var fruits = ["apple","banana"]; //(fruits: 객체)
+fruits.push("coconut");          //(push: 메서드 = 객체 fruits의 속성값) 
+</script>
+
+
+<script>
+var coworkers = {"programmer":"egoing", "designer":"youngmin"}  //객체 생성
+
+document.write("programer : "+coworkers.programmer+"<br>");
+document.write("designer : "+coworkers.designer+"<br>");
+
+coworkers.bookkeeper = "mandu";                                 //객체에 데이터 추가
+document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+
+coworkers["data scientist"] = "cherry";                         //객체에서 띄어쓰기 사용은 배열처럼 대괄호 사용
+document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+
+</script>
+
+
+2.19 반복문챕터에서 배웠듯이 배열은 for반복문/i를 통해 element에 접근하고 객체는 for in 반복문을 사용해 값들에 접근
+<script>
+    for(var key in coworkers) {
+        document.write(key+' : '+coworkers[key]+'<br>');
+    }
+</script>

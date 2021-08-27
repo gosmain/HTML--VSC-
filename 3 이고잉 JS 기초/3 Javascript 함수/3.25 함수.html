@@ -13,5 +13,21 @@
     two();                        
 </script>
 
+* 함수는 입력과 출력으로 이루어져 있음
+* 매개변수(parameter)와 인자(argument)를 이용하여 상황에 따라 더 다양하게 함수를 구현할 수 있음<둘다 입력에 해당>
+* 출력에 해당하는 것을 리턴(return)이라 부름 
+<script>
+function sum (left, right){             //left,right = parameter
+    document.write(left+right+'<br>');
+}
+sum(2,3);  //5                          //2,3 = argument
+sum(3,4);  //7
 
-* 매개변수와 인자를 이용하여 상황에 따라 더 다양하게 함수를 구현할 수 있음
+function sum2(left, right) {            
+    return left+right;   //(이미 출력받은 결과값에 추가적인 기능을 넣을때 편리/함수를 하나만 만들어 관리할 수 있기에 편리)
+}
+document.write(sum2(2,3)+'<br>');                                       //5
+document.write('<div style="color:red">'+sum2(2,3)+'</div>');           //5(red)
+document.write('<div style="font-size:3rem">'+sum2(2,3)+'</div>');      //5(big)
+</script> 
+
