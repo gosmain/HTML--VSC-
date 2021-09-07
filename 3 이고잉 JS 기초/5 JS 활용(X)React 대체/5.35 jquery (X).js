@@ -1,3 +1,8 @@
+// 하지만 REACT프레임워크가 Jquery 라이브러리보다 월등히 좋으니 쓸 이유가 없다. 
+
+
+
+
 var Links = {                                
     setColor:function (color){                   
         // var alist = document.querySelectorAll('a');        

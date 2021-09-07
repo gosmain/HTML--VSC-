@@ -4,13 +4,15 @@ var man = {name: "홍길동", age: 20, height: 180}  //객체(하나의 변수 �
 <script>
 var coworkers = {"programmer":"egoing", "designer":"youngmin"}  //객체 생성
 
-document.write("programer : "+coworkers.programmer+"<br>");
-document.write("designer : "+coworkers.designer+"<br>");
+document.write("programer : "+coworkers.programmer+'<br>');
+document.write("designer : "+coworkers.designer+'<br>');
 
 coworkers.bookkeeper = "mandu";                                 //객체에 데이터 추가
 document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
 
-coworkers["data scientist"] = "cherry";                         //객체에서 띄어쓰기 사용은 배열처럼 대괄호 사용
+delete coworkers.designer                                       //객체의 데이터 삭제
+
+coworkers["data scientist"] = "cherry";                         //(데이터 추가)객체에서 띄어쓰기 사용은 배열처럼 대괄호 사용
 document.write("data scientist : "+coworkers["data scientist"]+"<br>");
 
 </script>
