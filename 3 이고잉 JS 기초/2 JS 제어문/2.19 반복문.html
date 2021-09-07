@@ -1,0 +1,175 @@
+반복문 : 같은 작업을 반복적으로 실행해주는 문법
+
+1) while 반복문
+*  while 반복문은 조건을 만족하는 동안에는 반복 실행할 코드를 계속 실행합니다
+*  while 반복문은 continue 키워드를 만나면 뒤 코드를 모두 건너뜁니다(뒤 무시후 다시)
+*  while 반복문은 break 키워드를 만나면 즉시 반복문에서 탈출합니다 (끝)
+
+---------------------------------------------------------------------------------------------------------
+while 반복문 예시1:
+
+<script>
+console.log("Menu");
+console.log(" 1. Ice Americano");
+console.log(" 2. Cafe Latte");
+console.log(" 3. Cappuccino");
+console.log(" 4. Tea");
+
+var count = 0;  // 횟수를 셀 변수를 선언 및 초기화
+
+while (count < 3){  // while 반복문을 이용해서 count가 3 미만일 동안만 수행하도록 설정 = count가 3 미만 = true
+
+    var choice = parseInt(prompt("메뉴를 선택해 주세요."));  //입력값
+
+    console.log(choice + "번 메뉴를 선택하셨습니다. ");      //출력값
+
+    switch (choice) {  // (swith 조건문 예시-switch 조건문은 break 키워드를 사용하지 않으면 코드가 계속 실행됨)
+        case 1:
+            alert("아이스 아메리카노는 1500원입니다.");
+            break;
+        case 2:
+            alert("카페 라떼는 1800원입니다.");
+            break;
+        case 3:
+            alert("카푸치노는 2000원입니다.");
+            break;
+        case 4:
+            alert("홍차는 1300원입니다.");        //콘솔은 옆에 개발자창에 출력
+            break;
+        default:
+            alert("죄송합니다. 그런 메뉴는 없습니다. ");  //alert는 화면에 바로 직접 출력
+            break;
+    }
+    count++;  //반복문을 마치기 전에 count를 증가 (다시 시작위치로 돌아감)
+}
+
+console.log("안녕히 가십시오. ")  //반복문이 끝나면 메세지를 출력
+</script>
+
+---------------------------------------------------------------------------------------------------------
+while 반복문 예시 2 
+
+<script>
+var count = 0;  // 틀린 개수를 저장할 count 변수 선언
+
+while (true) {  // 조건식에 true를 입력하면 반복문이 계속 실행됨
+    var ans;
+        ans = parseInt(prompt("1+1=?")); // 정답 입력받기
+        if (ans !=2) {                   // if 조건문을 이용해 정답을 비교   
+            alert((++count) + "번 틀렸습니다. 다시 도전하세요.");  // 정답이 틀릴시 count를 1 증가
+            continue;                    // continue를 만나면 반복문의 맨 끝으로 이동(뒤 문제가 출력되지 않음)
+        }
+        ans = parseInt(prompt("7-3=?"));
+        if (ans != 4) {
+            alert((++count) + "번 틀렸습니다. 다시 도전하세요.");
+            continue;
+        }
+        ans = parseInt(prompt("9*7=?"));
+        if (ans != 63) {
+            alert((++count) + "번 틀렸습니다. 다시 도전하세요.");
+            continue;
+        }   
+        break;  
+        // continue를 만나면 여기로 이동 (break 건너뜀=while문이 true이므로 다시 문제가 출력됨)
+}          
+ // 정답을 모두 맞히면 continue를 만나지 않고 break를 만나 여기로 이동하여 반복문 밖으로 빠져나옴
+alert("참 잘했습니다.!")
+</script>
+
+---------------------------------------------------------------------------------------------------------
+do_while 반복문 예시 1
+
+<script>
+var cond = false;
+
+while (cond) { // while 반복문
+    document.write("이 구문은 실행되지 않습니다."); //while 반복문이 false이므로 실행 x
+}
+
+do {           // do-while 반복문
+    document.write("이 구문은 한번은 실행됩니다."); //일단 do반복문을 한번 실행한 다음 이후 반복-
+} while (cond);                               //-할 지 조건식을 보고 결졍하는 원리 (do는 while에 상관없이 일단 1회실행)
+
+do {           // do-while 반복문2
+    var ans = parseInt(prompt("1+1=?"));
+} while (ans != 2); 
+alert("맞혔습니다!");
+</script>
+
+---------------------------------------------------------------------------------------------------------
+* for반복문
+*  break 키워드가 반복문 바깥으로 빠져나가게 하는점은 while 반복문과 동일
+*  continue 키워드를 만나면 업데이트 구문이 실행되고 다시 조건식을 비교한다는 점이 다름
+<script>  
+for(var i=0; i<4; i+1){  //i가 0부터 4까지 ~
+    //뭐해라~
+}
+
+예시1
+
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var i = 0;   // 1                               //index(i)를 통해 배열의 element에 접근
+
+while (i < array.length){   // 2
+    console.log(array[i]);
+    i++;     // 3
+}
+
+//-->위 while 예시를 for 반복문 예시로 변형 -->
+
+for (var i = 0; i < array.length; i++) {  // (1,2,3)
+    console.log(array[i]);
+}
+</script>
+
+---------------------------------------------------------------------------------------------------------
+for 이중 반복문 예시
+
+<script>
+for (var i = 2; i <= 9; i++) {      //구구단 프로그램 예시
+    for (var j =1; j <= 9; j++) {
+        console.log(i + "*" + j + "=" + i * j);
+    }
+}
+</script>
+
+---------------------------------------------------------------------------------------------------------
+for반복문을 실행하면 각 배열의 element에 접근할 수 있음 / 그에 비해 객체의 속성에 접근하는 방법은 두가지가 있음-->
+
+객체의 속성에 접근하는 첫번째 방법 : Object.keys() 함수. (Object.keys()함수는 객체 속성의 이름을 배열로 반환)
+
+<script>
+var obj = {name: "object", weight: 30, isObject: true, arr: [1, 2, 3], obj: {property: 1}};
+
+console.log("for 구문으로 object property 반복하기");
+var property_list = Object.keys(obj);            // Object.keys()함수안에 obj를 인자로 포함 = 배열로 변환
+
+for (var i = 0; i < property_list.length; i++) {
+    var propertyName = property_list[i];
+    console.log("\t", propertyName, ": ", obj[propertyName]);
+}
+</script>
+
+객체의 속성에 접근하는 두번째 방법 : for in 반복문
+
+<script>
+console.log("\n\nfor in 구문으로 object property 반복하기");
+
+for(var propertyName in obj) {
+    console.log("\t", propertyName, ": ", obj[propertyName]);
+}
+</script>
+
+-----------------------------------------------------------------------------------------------------------
+for in 반복문 예제 2 
+
+<script>
+var obj = {name: "object", age: 10, weight: 5}
+
+var sum = 0;
+for (var property in obj) {
+    if (typeof(obj[property]) == "number") {
+        sum = sum + obj[property];
+    }
+}
+</script>
