@@ -2,7 +2,7 @@
 
 예제:
 
-function f() {
+function f() {                        //함수선언
     console.log("f is called");
 }
 
