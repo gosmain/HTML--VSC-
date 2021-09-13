@@ -4,15 +4,15 @@
         <title>Egoing 3 - Function</title>
         <meta charset="utf-8">
         <script>
-            var Links = {                                //링크 객체
+            let Links = {                                //링크 객체
                 setColor:function (color){                   
-                    var alist = document.querySelectorAll('a');        
-                    for (var i = 0; i < alist.length; i++) { 
+                    let alist = document.querySelectorAll('a');        
+                    for (let i = 0; i < alist.length; i++) { 
                         alist[i].style.color = color;
                     }
                 }
             }
-            var Body  = {                                //바디 객체
+            let Body  = {                                //바디 객체
                 setColor:function (color){               //객체 1(객체안의 함수=메서드)
                 document.querySelector('body').style.color = color;
                 },
@@ -21,7 +21,7 @@
                 }
             }
             function nightDayHandler(self){              //함수
-            var target = document.querySelector('body');
+            let target = document.querySelector('body');
                 if(self.value === 'night') {                         
                     Body.setBackgroundColor('black');    //바디객체 호출
                     Body.setColor('white');
