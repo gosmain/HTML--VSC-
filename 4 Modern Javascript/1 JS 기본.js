@@ -5,6 +5,7 @@ alert(`당신의 나이는 ${age}살 입니다.`); // 당신의 나이는 100살
 let isBoss = confirm("당신이 주인인가요?"); // result = confirm(question);
 alert( isBoss ); // 확인 버튼을 눌렀다면 true가 출력됩니다.
 
+
 //-----------------------------------------------------------------------------------------------------------------------
 alert( true || true );   // true (참이 하나라도 있을 시 true 반환)
 alert( false || true );  // true
@@ -81,7 +82,7 @@ let nickName = "바이올렛";
 
 alert(firstName ?? lastName ?? nickName ?? "익명의 사용자"); // 바이올렛 (null이나 undefined가 아닌 첫 번째 피연산자)
 
-/*❤     OR"||"연산자와 매우 비슷해보임 (하지만 ||는 첫번 째 truthy값을 반환, ??은 첫 번째 정의된 값을 반환)
+/*❤    OR"||"연산자와 매우 비슷해보임 (하지만 ||는 첫번 째 truthy값을 반환, ??은 첫 번째 정의된 값을 반환)
 null과 undefined, 숫자 0을 구분 지어 다뤄야 할때 이 차이점은 매우 중요한 역할을 함 */
 let height = 0;
 alert(height || 100); // 100 (0은 falsy)

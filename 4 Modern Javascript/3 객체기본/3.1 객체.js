@@ -8,9 +8,9 @@ let user = {name: "john", age: 30,};  // '객체 리터럴' 문법 --> * 주 사
 
 user.isAdmin =true; //객체에 불린형 데이터 추가
 
-user["rel num"] = "2" //(데이터 추가)객체에서 띄어쓰기 사용은 배열처럼 대괄호 사용
+user["rel num"] = "2"; //(데이터 추가)객체에서 띄어쓰기 사용은 배열처럼 대괄호 사용
 
-delete user.name    //객체의 데이터 삭제
+delete user.name;    //객체의 데이터 삭제
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ alert( "blabla" in user ); // user.blabla는 존재하지 않기 때문에 false
 let obj = {name: "object", weight: 30, isObject: true, arr: [1, 2, 3], obj: {property: 1}};
 
 console.log("for 구문으로 object property 반복하기");
-let property_list = Object.keys(obj);            // Object.keys()함수안에 obj를 인자로 포함 = 배열로 변환
+let property_list = Object.keys(obj);           // Object.keys()함수안에 obj를 인자로 포함 = 배열로 변환
 
 for (let i = 0; i < property_list.length; i++) {
     let propertyName = property_list[i];
@@ -68,19 +68,21 @@ let user = {name: "ko", age: 22, isAdmin: true};
   
   for (let key in user) {
     // 키
-    alert( key );  // name, age, isAdmin
+    alert(key);  // name, age, isAdmin
     // 키에 해당하는 값
-    alert( user[key] ); // ko, 22, true
+    alert(user[key]); // ko, 22, true
   }
 
 //for in 반복문 예제2:
 
-let obj = {name: "object", age: 10, weight: 5}
+let salaries = {
+    john = 100,
+    Ann = 160,
+    Pete = 130,
+};
 
 let sum = 0;
-for (let prop in obj) {
-    if (typeof(obj[prop]) == "number") {
-        sum = sum + obj[prop];
-    }
+for(let key in salaries) {
+    sum += salaries[key];
 }
-
+alert(sum); //390
