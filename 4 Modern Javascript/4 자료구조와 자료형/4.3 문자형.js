@@ -40,7 +40,8 @@ alert(str.indexOf('Widget')); // 0, str은 'Widget'으로 시작
 alert(str.indexOf('widget')); // -1, indexOf는 대·소문자를 따지므로 원하는 문자열을 찾지 못함
 alert(str.indexOf("id"));     // 1, "id"는 첫 번째 위치에서 발견됨 (W"id"get의 id)
 
-// 부분 문자열 추출
+// 부분 문자열 추출 
+// <배열도 가능> arr.slice도 문자열 메서드 str.slice와 유사하게 동작. 하지만 arr.slice는 substring대신 subarry를 반환
 slice(start, end); // start부터 end까지(end는 미포함)
 
 let str = "gosmain";
