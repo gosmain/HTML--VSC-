@@ -79,3 +79,35 @@ Gyubin = null; // visitedSet에서 Gyubin을 나타내는 객체가 자동으로
 
 
 // 위크셋과 위크맵의 가장 큰 단점: 반복 작업 불가능: 위크맵과 위크셋은 객체와 함께 ‘추가’ 데이터를 저장하는 용도로 쓸 수 있음
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+과제예시1 ; // '읽음' 상태인 메세지 저장(WeakSet = 예 or 아니오 형식)
+
+let messages = [
+  {text: "Hello", from: "Youngmin"},
+  {text: "How goes?", from: "Youngmin"},
+  {text: "See you soon", from: "Gyubin"}
+];
+
+let readMessages = new WeakSet(); 
+
+readMessages.add(messages[0]); // 메시지 두 개가 읽음 상태로 변경, readMessages에는 요소 두 개가 저장
+readMessages.add(messages[1]);
+
+alert("message 0은 읽음 상태인가요?: " + readMessages.has(messages[0])); // true
+
+messages.shift(); // 이제 readMessages에는 요소가 하나만 남음
+
+
+과제예시2 ; // 메세지 읽은 날짜 저장(WeakMap)
+
+let messages = [
+  {text: "Hello", from: "Youngmin"},
+  {text: "How goes?", from: "Youngmin"},
+  {text: "See you soon", from: "Gyubin"}
+];
+
+let readMap = new WeakMap();
+
+readMap.set(messages[0], new Date(2017, 1, 1));

@@ -112,3 +112,18 @@ for (let value of set) alert(value); // 아래 forEach를 사용해도 동일하
 set.forEach((value, valueAgain, set) => { 
   alert(value);
 });
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+과제예시1 ; // 배열에서 중복 요소 제거하기(Set)
+
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+
+function unique(Array)
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert(unique(values)); // `Hare, Krishna, :-0`
