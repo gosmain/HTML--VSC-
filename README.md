@@ -1,2 +1,1 @@
-# HTML--VSC-
-Basics in JS
+## Modern Javascript
