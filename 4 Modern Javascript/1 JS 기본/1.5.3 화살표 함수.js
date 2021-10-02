@@ -10,3 +10,11 @@ parsedToDos.forEach((item) => console.log("this is the turn of", item));
 function sayHello(item){
   console.log("this is the turn of", item)
 }
+
+
+//
+const multiplyByTwo = num => num * 2;
+
+const multiplyByTwo = function() {
+  num = num * 2;
+}
