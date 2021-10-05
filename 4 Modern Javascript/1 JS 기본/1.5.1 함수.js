@@ -52,16 +52,16 @@ checkPermission() // 승인 여부를 확인하고 true나 false를 반환함
 
 // 함수 선언과 함수 표현식
 function sayHi() {   // (1) 함수 선언문 방식으로 함수 생성
-    alert( "Hello" );
-  }
+  alert( "Hello" );
+}
   
-  let func = sayHi;    // (2) 함수 복사 (sayHi옆에 괄호가 없으므로 함수 속 값이 아니라 함수 그 자체를 저장)
+let func = sayHi;    // (2) 함수 복사 (sayHi옆에 괄호가 없으므로 함수 속 값이 아니라 함수 그 자체를 저장)
   
-  func(); // Hello     // (3) 복사한 함수를 실행(정상적으로 실행됩니다)!
-  sayHi(); // Hello    //     본래 함수도 정상적으로 실행됩니다.
+func(); // Hello     // (3) 복사한 함수를 실행(정상적으로 실행됩니다)!
+sayHi(); // Hello    //     본래 함수도 정상적으로 실행됩니다.
 
 
-  let sayHi = function() { // 함수 표현식
-    alert( "Hello" );
-  };
+let sayHi = function() { // 함수 표현식
+  alert( "Hello" );
+};
   

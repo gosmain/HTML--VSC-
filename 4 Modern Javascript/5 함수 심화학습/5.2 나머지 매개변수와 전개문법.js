@@ -6,15 +6,15 @@
 
 // 나머지 매개변수 (사용 패턴: 인수 개수에 제한이 없는 함수를 만들 때 나머지 매개변수를 사용)
 function showName(firstName, lastName, ...titles) { // ... = 나머지 매개변수들을 titles배열에 집어넣어라
-    alert(firstName + ' ' + lastName); // Julius Caesar
+    alert(firstName + ' ' + lastName); // Gyubin Park
   
     // 나머지 인수들은 배열 titles의 요소가 됩니다.
-    // titles = ["Consul", "Imperator"]
-    alert(titles[0]); // Consul
-    alert(titles[1]); // Imperator
+    // titles = ["Student", "of HUFS"]
+    alert(titles[0]); // Student
+    alert(titles[1]); // of HUFS
     alert(titles.length); // 2
   };
-  showName("Julius", "Caesar", "Consul", "Imperator");
+  showName("Gyubin", "Park", "Student", "of HUFS");
 
 //--------------------------------------------------------------------------------------------------------------
 // spread 문법 (전개 문법) <나머지 매개변수와 반대 역할 = 배열을 매개변수로>

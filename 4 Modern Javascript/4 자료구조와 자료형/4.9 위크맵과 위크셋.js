@@ -7,12 +7,12 @@ weakMap.set(obj, "ok"); //정상적으로 동작(객체 키)
 weakMap.set("test", "Whoops"); // Error: Invalid value used as weak map key <문자열("test")은 키로 사용할 수 없음>
 
 // 위크맵의 키로 사용된 객체를 참조하는 것이 아무것도 없다면 해당 객체는 자동으로 삭제됨
-let Gyubin = {name: "Gyubin"};
+let gyubin = {name: "gyubin"};
 
 let weakMap = new WeakMap();
-weakMap.set(Gyubin, "...");
+weakMap.set(gyubin, "...");
 
-Gyubin = null; // 참조를 덮어씀. Gyubin을 나타내는 객체는 이제 메모리에서 지워짐
+gyubin = null; // 참조를 덮어씀. gyubin을 나타내는 객체는 이제 메모리에서 지워짐
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,11 +38,11 @@ function countUser(user) { // 사용자가 방문하면 방문 횟수를 늘려�
 };
 
 // 📁 main.js
-let Gyubin = {name: "Gyubin"};
+let gyubin = {name: "gyubin"};
 
-countUser(Gyubin); // Gyubin의 방문 횟수를 증가
+countUser(gyubin); // gyubin의 방문 횟수를 증가
 
-Gyubin = null; // Gyubin의 방문 횟수를 셀 필요가 없어지면 Gyubin을 null로 덮어씌움
+gyubin = null; // gyubin의 방문 횟수를 셀 필요가 없어지면 gyubin을 null로 덮어씌움
 
 
 // 유스 케이스: 캐싱(caching)------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,22 +60,22 @@ Gyubin = null; // Gyubin의 방문 횟수를 셀 필요가 없어지면 Gyubin�
 
 let visitedSet = new WeakSet();
 
-let Gyubin = {name: "Gyubin"};
+let gyubin = {name: "gyubin"};
 let pete = {name: "Pete"};
 let mary = {name: "Mary"};
 
-visitedSet.add(Gyubin); // Gyubin이 사이트를 방문
+visitedSet.add(gyubin); // gyubin이 사이트를 방문
 visitedSet.add(pete);   // 이어서 Pete가 사이트를 방문
-visitedSet.add(Gyubin); // 이어서 Gyubin이 다시 사이트를 방문
+visitedSet.add(gyubin); // 이어서 gyubin이 다시 사이트를 방문
 
 // visitedSet엔 두 명의 사용자가 저장
 
-alert(visitedSet.has(Gyubin)); // true // Gyubin의 방문 여부를 확인
+alert(visitedSet.has(gyubin)); // true // gyubin의 방문 여부를 확인
 
 
 alert(visitedSet.has(mary)); // false // Mary의 방문 여부를 확인
 
-Gyubin = null; // visitedSet에서 Gyubin을 나타내는 객체가 자동으로 삭제
+gyubin = null; // visitedSet에서 gyubin을 나타내는 객체가 자동으로 삭제
 
 
 // 위크셋과 위크맵의 가장 큰 단점: 반복 작업 불가능: 위크맵과 위크셋은 객체와 함께 ‘추가’ 데이터를 저장하는 용도로 쓸 수 있음
@@ -87,7 +87,7 @@ Gyubin = null; // visitedSet에서 Gyubin을 나타내는 객체가 자동으로
 let messages = [
   {text: "Hello", from: "Youngmin"},
   {text: "How goes?", from: "Youngmin"},
-  {text: "See you soon", from: "Gyubin"}
+  {text: "See you soon", from: "gyubin"}
 ];
 
 let readMessages = new WeakSet(); 
@@ -105,7 +105,7 @@ messages.shift(); // 이제 readMessages에는 요소가 하나만 남음
 let messages = [
   {text: "Hello", from: "Youngmin"},
   {text: "How goes?", from: "Youngmin"},
-  {text: "See you soon", from: "Gyubin"}
+  {text: "See you soon", from: "gyubin"}
 ];
 
 let readMap = new WeakMap();
