@@ -1,0 +1,47 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <title>Egoing 3 - Function</title>
+        <meta charset="utf-8">
+        <script>
+            let Links = {                                //링크 객체
+                setColor:function (color){                   
+                    let alist = document.querySelectorAll('a');        
+                    for (let i = 0; i < alist.length; i++) { 
+                        alist[i].style.color = color;
+                    }
+                }
+            }
+            let Body  = {                                //바디 객체
+                setColor:function (color){               //객체 1(객체안의 함수=메서드)
+                document.querySelector('body').style.color = color;
+                },
+                setBackgroundColor:function (color){     //객체2
+                document.querySelector('body').style.backgroundColor = color;
+                }
+            }
+            function nightDayHandler(self){              //함수
+            let target = document.querySelector('body');
+                if(self.value === 'night') {                         
+                    Body.setBackgroundColor('black');    //바디객체 호출
+                    Body.setColor('white');
+                    self.value = 'day';
+                   
+                    Links.setColor('powderblue');        //링크객체 호출    
+                    
+                } else {                                               
+                    Body.setBackgroundColor('white');              
+                    Body.setColor('black');
+                    self.value = 'night';
+                    
+                    Links.setColor('lightgreen');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1><a href ="index.html">WEB</a></h1>
+        <h2>Javascript</h2>
+        <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">    <!--함수호출-->
+    </body>
+</html>

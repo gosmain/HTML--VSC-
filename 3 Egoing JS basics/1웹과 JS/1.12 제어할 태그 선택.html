@@ -1,0 +1,20 @@
+CSS로 페이지의 스타일을 바꾸는 기능 + JS의 이벤트 = 특정 이벤트가 일어났을때, 페이지의 스타일이 바뀜
+
+<querySelector>
+* querySelector함수를 이용하면 선택자를 사용해 원하는 태그를 선택 할 수 있음
+
+CSS 선택자
+<script>
+document.querySelector    // CSS 선택자를 기반으로 엘리먼트를 선택하는 메서드 
+eg: document.querySelector("p");  
+document.querySelectorAll // 위 복수형 (엘리먼트 모두 선택)
+</script>
+* CSS 선택자를 작성할 때 ID를 기반으로 선택하려면 "#"을 사용
+* (태그) 이름을 기반으로 선택하려면 이름만 작성
+* (클래스)를 기반으로 선택하려면 마침표를 사용
+* (여러 개)를 선택하려면 쉼표를 사용하여 구분
+
+응용:
+<input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor = 'black';">
+= 이벤트가 일어날 때마다 실행되는 JS 코드 (버튼을 클릭할때마다)     
+

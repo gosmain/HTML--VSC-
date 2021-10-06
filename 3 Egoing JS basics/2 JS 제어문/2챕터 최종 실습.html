@@ -1,0 +1,29 @@
+<body>
+    <h1><a href ="index.html">WEB</a></h1>
+    <h2>Javascript</h2>
+    <input id="night_day" type="button" value="night" onclick="  //버튼을 눌렀을 때(이벤트) 바뀌는 css 스타일 js코드-->  
+
+    let body = document.querySelector('body');
+    if(this.value === 'night') {                         // 버튼의 value가 night일때 바뀌는 css 스타일
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        this.value = 'day';
+
+        let alist = document.querySelectorAll('a');        // querySelectorAll 함수로 코드 내의 a(링크)를 모두 탐색
+        let i = 0;
+        for(let i = 0; i<alist.length; i = i + 1){         // 코드 내 a의 개수에 따라 모든 a에 color style 적용
+        alist[i].style.color = 'skyblue';
+        }
+    } else {                                               // 버튼의 value가 day일때
+        body.style.backgroundColor = 'white';              
+        body.style.color = 'black'; 
+        this.value = 'night';
+
+        let alist = document.querySelectorAll('a');
+        let i = 0;
+        for(let i = 0; i<alist.length; i = i + 1){
+            alist[i].style.color = 'lightgreen';
+        }
+    }
+    ">
+</body>
