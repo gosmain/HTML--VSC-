@@ -86,7 +86,7 @@ alert(arr.includes(1));    // true (존재 여부)
 // 배열에서 조건에 부합하는 객체찾기 find()
 arr.find(fn);   // find메서드는 함수의 반환값을 true로 만드는 하나의 요소를 찾음,
 arr.filter(fn); // 조건에 충족하는 요소가 여러개라면 filter 메서드 사용
-
+arr.filter(fn)//는 함수 fn의 반환 값을 true로 만드는 모든 요소를 배열로 반환해줌
 let result = arr.find(function(item, index, array) {
     // true가 반환되면 반복이 멈추고 해당 요소를 반환합니다.
     // 조건에 해당하는 요소가 없으면 undefined를 반환합니다.
@@ -102,7 +102,7 @@ let user = users.find(item => item.id == 1);
 alert(user.name); // John
 
 // filter()로 특정 범위에 속하는 요소 찾기 
-function filterRange(arr, a, b) { // 배열 arr의 요수 a이상 b이하를 골라 새로운 배열에 넣고 해당 요소를 출력
+function filterRange(arr, a, b) { // 배열 arr의 요소 a이상 b이하를 골라 새로운 배열에 넣고 해당 요소를 출력
     return arr.filter(item => (a <= item && item <= b));
 };
 
