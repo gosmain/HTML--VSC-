@@ -1,25 +1,3 @@
-// Constructor Function (생성자 함수) (객체를 찍어내는 공장을 만드는 constructor 함수)  
-// 1) 생성자 함수는 함수 이름의 첫 글자가 대문자로 시작(일반 함수와 차별화)
-// 2) 반드시 new 연산자를 붙여 실행
-    function Person(name,first,second,third){
-    this.name = name;                    // 객체의 속성들(변수들)은 생성자 함수 안에 넣는 것이 일반적
-    this.first = first;
-    this.second = second;
-    this.third = third;
-    }
-    Person.prototype.sum = function(){   // 객체의 메소드들은 생성자의 prototype에 추가하는 것이 일반적 (메모리 절약)
-        return this.first+this.second+this.third;
-    }
-    let kim = new Person('kim',10,20,30); // new 라는 키워드를 붙이므로 위 person 함수가 객체를 찍어내는 생성자(constructor)이 됨
-    let lee = new Person('lee',10,10,10);
-    let ko = Person('ko',10,30,30);       //그냥 함수 호출 = 일반 함수 취급 = undefined
-
-    document.write('kim.sum()', kim.sum()+'<br>');  
-    document.write('lee.sum()', lee.sum());
-    document.write('ko.sum()', ko.sum()+'<br>');  //객체 생성 X = undefined
-
-
-//--------------------------------------------------------------------------------------------------------------
 // class 또한 객체를 만들어 내는 공장
 // class를 이용해 객체 안에 소속된 함수(메소드) 생성
 
