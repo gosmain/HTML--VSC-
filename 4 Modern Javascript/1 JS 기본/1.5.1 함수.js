@@ -8,17 +8,17 @@ function 함수이름(복수의, 매개변수는, 콤마로, 구분) {
 }
 
 // 연속적인 규칙이 존재한다면 반복문으로 작성가능, 연속되지는 않지만 중복되는 내용이 있을 경우 함수가 용이:
-    function two(){
-        document.write('<li>2</li>');
-        document.write('<li>3</li>');
-        let message = "안녕하세요!";   //함수 내에서 선언한 변수(지역 변수)는 함수 안에서만 접근 가능
+function two(){
+    document.write('<li>2</li>');
+    document.write('<li>3</li>');
+    let message = "안녕하세요!";   //함수 내에서 선언한 변수(지역 변수)는 함수 안에서만 접근 가능
 
-        alert(message);
-    }
-    document.write('<li>1</li>');
-    two();
-    document.write('<li>4</li>');   //이 줄로 인해 함수가 연속되지는 않음 하지만 위아래 중복된 함수가 사용됨
-    two();                        
+    alert(message);
+}
+document.write('<li>1</li>');
+two();
+document.write('<li>4</li>');   //이 줄로 인해 함수가 연속되지는 않음 하지만 위아래 중복된 함수가 사용됨
+two();                        
 
 
 /* 함수는 입력과 출력으로 이루어져 있음

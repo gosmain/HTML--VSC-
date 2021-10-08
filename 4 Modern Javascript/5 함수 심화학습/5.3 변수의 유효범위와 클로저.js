@@ -54,7 +54,7 @@ function makeCounter() {
 function makeCounter() {
   let count = 0; 
 
-  function counter() { //
+  function counter() {
     return count++;
   }
   // 지역변수 count를 사용하지만 set과 decrease메서드는 함수 counter에 정의하고 있음
@@ -143,12 +143,12 @@ let users = [ // 객체가 담긴 배열
   { name: "Ann", age: 19, surname: "Hathaway" }
 ];
 
-// 일반적인 정렬 방법:
-users.sort((a, b) => a.name > b.name ? 1 : -1); // 이름을 기준으로 정렬(Ann, John, Pete)
+// 1) 일반적인 정렬 방법(1=순서가 바뀌고, -1=순서가 유지):
+users.sort((a, b) => a.name > b.name ? 1 : -1); // (a의 이름이 b의이름보다 클시 1=바뀌게 정렬) 이름을 기준으로 정렬(Ann, John, Pete)
 
 users.sort((a, b) => a.age > b.age ? 1 : -1);   // 나이를 기준으로 정렬(Pete, Ann, John)
 
-// 함수를 사용해 더 깔끔한 코드로 정렬하고 호출하기:
+// 2) 함수를 사용해 더 깔끔한 코드로 정렬하고 호출하기:
 function byField(standard){ 
   return (a, b) => a[standard] > b[standard] ? 1 : -1;
 }
