@@ -143,9 +143,10 @@ let users = [ // 객체가 담긴 배열
   { name: "Ann", age: 19, surname: "Hathaway" }
 ];
 
-// 1) 일반적인 정렬 방법(1=순서가 바뀌고, -1=순서가 유지):
-users.sort((a, b) => a.name > b.name ? 1 : -1); // (a의 이름이 b의이름보다 클시 1=바뀌게 정렬) 이름을 기준으로 정렬(Ann, John, Pete)
-
+// 1) 일반적인 정렬 방법(1 = 순서가 바뀌고, -1 = 순서가 유지):
+users.sort((a, b) => a.name > b.name ? 1 : -1); // (a의 이름이 b의이름보다 클 경우 1=바뀌게 정렬) 이름을 기준으로 정렬(Ann, John, Pete)
+users.sort((a, b) => a.name.charCodeAt() - b.name.charCodeAt()); // 위와 같은 결과 실행
+ 
 users.sort((a, b) => a.age > b.age ? 1 : -1);   // 나이를 기준으로 정렬(Pete, Ann, John)
 
 // 2) 함수를 사용해 더 깔끔한 코드로 정렬하고 호출하기:

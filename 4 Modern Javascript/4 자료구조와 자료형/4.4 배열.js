@@ -87,9 +87,9 @@ alert(arr.includes(1));    // true (존재 여부)
 arr.find(fn);   // find메서드는 함수의 반환값을 true로 만드는 하나의 요소를 찾음,
 arr.filter(fn); // 조건에 충족하는 요소가 여러개라면 filter 메서드 사용
 arr.filter(fn)//는 함수 fn의 반환 값을 true로 만드는 모든 요소를 배열로 반환해줌
-let result = arr.find(function(item, index, array) {
-    // true가 반환되면 반복이 멈추고 해당 요소를 반환합니다.
-    // 조건에 해당하는 요소가 없으면 undefined를 반환합니다.
+let result = arr.filter(function(item, index, array) {
+    // 조건을 충족하는 요소는 results에 순차적으로 더해집니다.
+    // 조건을 충족하는 요소가 하나도 없으면 빈 배열이 반환됩니다.
 });
 
 let users = [
@@ -102,6 +102,23 @@ let user = users.find(item => item.id == 1);
 alert(user.name); // John
 
 // filter()로 특정 범위에 속하는 요소 찾기 
+예시1;
+let army = {
+    minAge: 18,
+    maxAge: 27,
+    canJoin(user) {
+        return user.age >= this.minAge && user.age <this.maxAge;
+    }
+};
+let users = [{age: 16}, {age: 20}, {age: 23}, {age: 30}];
+
+let soldiers = users.filter(army.canJoin, army);
+
+alert(soldiers.length); // 2
+alert(soldiers[0].age); // 20
+alert(soldiers[1].age); // 23
+
+예시2;
 function filterRange(arr, a, b) { // 배열 arr의 요소 a이상 b이하를 골라 새로운 배열에 넣고 해당 요소를 출력
     return arr.filter(item => (a <= item && item <= b));
 };
@@ -127,6 +144,20 @@ let result = arr.map(function(item, index, array) {
 });
 let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
 alert(lengths); // 5,7,6 (새로운 배열 생성)
+
+const data = [
+    {id: 0, name: '홍길동', age: 10}, // index = 0
+    {id: 1, name: '강호동', age: 20}, // index = 1
+    {id: 2, name: '유재석', age: 30}, // index = 2
+    {id: 3, name: '이효리', age: 40}, // index = 3
+    {id: 4, name: '장채연', age: 50}  // index = 4
+];
+
+data.map((item, index) => { // index는 배열안의 인덱스(몇 번째)를 의미하고 item에는 배열안의 값들이 하나씩 순서대로 담김
+    if(index % 2 == 0) { // index가 짝수번인 것만 출력하라 (0,2,4,...)
+        console.log(item);
+    }
+}); 
 
 // reverse() 명령은 배열의 순서를 반대로 뒤집음 (다시 원상복귀시키는 명령: sort())
 
