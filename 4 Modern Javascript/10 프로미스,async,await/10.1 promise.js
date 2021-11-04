@@ -1,5 +1,7 @@
+비동기처리 //(요청과 결과가 동시에 일어나지 않음) // 콜백함수(x) or 프로미스(o)
+// (동기방식은 설계가 간단하고 직관적이지만 결과가 주어질 때까지 아무것도 할 수 없다는 단점이 있음)
+// (비동기방식은 동기보다 복잡하지만 결과가 주어지는데 시간이 걸리더라도 그 시간동안 다른 작업을 할 수 있음:효율적)
 //(스크립트 로딩에 사용되는 함수 loadScript)
-
 function loadScript(src, callback) { // 콜백 함수로 작성
     let script = document.createElement("script");
     script.src = src;

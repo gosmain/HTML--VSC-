@@ -1,4 +1,4 @@
-제너레이터 //(이터러블 객체 대체제)
+제너레이터 //(function* fn(){})(이터러블 객체와 동일한 역할을 하는 대체제)(일반 제너레이터: 동기적 문법)
 // 함수의 실행을 중간에 멈췄다가 재개할 수 있는 기능
 // 다른 작업을 하다가 다시 돌아와서 next()해주면 진행이 멈췄던 부분 부터 이어서 실행
 
@@ -52,9 +52,7 @@ let range = {
     to: 5,
 
     *[Symbol.iterator]() {  // [Symbol.iterator]: function*()를 짧게 줄인 형태
-        for(let value = this.from; value <= this.to; value++) {
-            yield value;
-        }
+        for(let value = this.from; value <= this.to; value++) yield value;
     }
 };
 console.log([...range]); // 1,2,3,4,5
@@ -80,3 +78,44 @@ for (let code of generatePassword()) {
     str += String.fromCharCode(code);
 }
 console.log(str); // 0..9A..Za..z
+
+
+//yield를 사용해 제너레이터 안,밖으로 정보 교환하기--------------------------------------------------------------------------------------------------------------
+// yield는 바깥으로 전달할 뿐만 아니라 값을 제너레이터 안으로 전달하기도 함
+
+function* gen() { // 제너레이터
+    let ask1 = yield "첫번째 숫자를 입력해주세요"; // 첫 yield
+    console.log(ask1); // 4         
+    let ask2 = yield "두번째 숫자를 입력해주세요"; // 두번째 yield
+    console.log(ask2); // 9       
+} 
+let generator = gen();
+console.log(generator.next().value);  // "첫번째 숫자를 입력해주세요" (첫번째 yield에서 멈춤)
+console.log(generator.next(4).value); // 4, "두번째 숫자를 입력해주세요" (두번째 yield에서 멈춤)
+console.log(generator.next(9).done);  // 9, true        
+
+/* 위 코드 실행시 결과:
+"첫번째 숫자를 입력해주세요" (첫번째 yield에서 멈춤)
+
+4
+"두번째 숫자를 입력해주세요" (두번째 yield에서 멈춤)
+
+9
+true
+*/
+
+
+//generator.throw--------------------------------------------------------------------------------------------------------------
+// 외부코드가 에러를 만들거나 던질 수 있음(yield 안으로 전달)
+
+function* generate() {
+    let result = yield "2 + 2  = ?";
+}
+let generator = generate();
+let question = generator.next().value;
+
+try {
+    generator.throw(new Error("데이터베이스에서 답을 찾지 못했습니다"));
+} catch(e) {
+    console.log(e); // 에러 출력
+}
