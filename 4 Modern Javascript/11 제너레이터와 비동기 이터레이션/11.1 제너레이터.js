@@ -72,7 +72,7 @@ function* generatePassword() {
     yield* generateSequence(97, 122); // a..z
 }
 
-let str = "",
+let str = "";
 
 for (let code of generatePassword()) {
     str += String.fromCharCode(code);
