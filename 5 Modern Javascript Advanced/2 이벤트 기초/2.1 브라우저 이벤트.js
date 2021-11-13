@@ -31,20 +31,20 @@ button.onclick = function() {
 
 3./ // addEventListener
 // 위 두 방식은 하나의 이벤트에 복수의 핸들러를 할당할 수 없음 (예: 버튼 클릭시 강조하면서 메세지도 출력)
-// ddEventListener를 사용하여 여러개의 핸들러를 할당할 수 있음
+// adEventListener를 사용하여 여러개의 핸들러를 할당할 수 있음 (하나의 이벤트에 여러가지 일)
 
 <input type = "button" id = "button" value = "클릭해 주세요"></input>
 
 function handler1() {
-alert('감사합니다!');
-};
+  alert('감사합니다!');
+}
 function handler2() {
-alert('다시 한번 감사합니다!');
+  alert('다시 한번 감사합니다!');
 }
 
-button.onclick = () => alert("안녕하세요.");
-button.addEventListener("click", handler1); // 감사합니다!
-button.addEventListener("click", handler2); // 다시 한번 감사합니다!
+button.onclick = () => alert("안녕하세요."); // 첫 메세지
+button.addEventListener("click", handler1); // 감사합니다! (두번째)
+button.addEventListener("click", handler2); // 다시 한번 감사합니다! (세번째)
 
 
 // addEventListener를 이용하면 함수뿐만 아니라 객체와 클래스를 이벤트 핸들러로 할당할 수 있음
