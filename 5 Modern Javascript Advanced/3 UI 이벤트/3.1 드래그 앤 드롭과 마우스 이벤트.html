@@ -1,0 +1,105 @@
+<드래그 앤 드롭 기본 알고리즘>
+드래그(drag)와 드롭(drop)은 사용자와 컴퓨터 간 상호작용을 도와주는 훌륭한 도구
+파일관리 어플리케이션 문서를 복사해 이동하는 것부터 주문하려는 물건을 장바구니에 드롭하는 것까지,
+drag와 drop을 사용하면 아주 단순하고 명쾌하게 원하는 동작을 수행할 수 있음
+
+핵심요소:
+이벤트 흐름: ball.mousedown -> document.mousemove -> ball.mouseup (ondragstart 취소를 기억)
+드래그 시작 시 요소를 기준으로 포인터의 초기 이동을 기억하고 (shifgX*shoftY) 드래그하는 동안 유지함
+document.elementFormPoint를 사용해 포인터 아래의 드롭할 수 있는 요소를 감지함
+
+mouseup에서 데이터를 변경하고, 요소를 이동하는 등 지적으로 드롭을 마칠 수 있음
+날아가는요소를 강조할 수 있음
+특정 영역이나 방향으로 드래그하는 것을 제한할 수 있음
+mousedown/up에 이벤트 위임을 사용할 수 있음. 
+event.target을 확인하는 넓은 영역의 이벤트 핸들러는 수백 개의 요소에 대한 드래그 앤 드롭을 관리할 수 있음
+
+
+<과제예시: 움직이는 공 + 골대>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #gate {
+                cursor: pointer;
+                margin-bottom: 100px;
+                width: 83px;
+                height: 46px;
+            }
+
+            #ball {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Drag the ball.</p>
+        <img src = "https://en.js.cx/clipart/soccer-gate.svg" id = "gate" class = "droppable">
+        <img src = "https://en.js.cx/clipart/ball.svg" id = "ball">
+
+        <script>
+            let currentDroppable = null;
+
+            ball.onmousedown = function(event) {
+                let shiftX = event.clientX - ball.getBoundingClientRect().left;
+                let shiftY = event.clientY - ball.getBoundingClientRect().top;
+                
+                ball.style.position = "absolute";
+                ball.style.zIndex = 1000;
+                document.body.append(ball);
+
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    ball.style.left = pageX - shiftX + "px";
+                    ball.style.top = pageY - shiftY + "px";
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+
+                    ball.hidden = true;
+                    let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+                    ball.hidden = false;
+
+                    if (!elemBelow) return;
+
+                    let droppableBelow = elemBelow.closest(".droppable");
+                    if (currentDroppable != droppableBelow) {
+                        if (currentDroppable) {
+                            leaveDroppable(currentDroppable);
+                        }
+                        currentDroppable = droppableBelow;
+                        if (currentDroppable) {
+                            enterDroppable(currentDroppable);
+                        }
+                    }
+                }
+
+                document.addEventListener("mousemove", onMouseMove);
+
+                ball.onmouseup = function() {
+                    document.removeEventListener("mousemove", onMouseMove);
+                    ball.onmouseup = null;
+                };
+            };
+
+            function enterDroppable(elem) {
+                elem.style.background = "pink";
+            }
+            function leaveDroppable(elem) {
+                elem.style.background = "";
+            }
+
+            ball.ondragstart = function() {
+                return false;
+            };
+        </script>
+    </body>
+</html>

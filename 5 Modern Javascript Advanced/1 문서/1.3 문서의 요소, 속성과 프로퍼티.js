@@ -20,7 +20,7 @@ console.log(document.body.getAttribute("something"));
 
 //문서 수정하기------------------------------------------------------------------------------------------------------------------------------------------
 <ol id="ol">
-    <li>0</li>
+    <li id = "zero">0</li>
     <li>1</li>
     <li>2</li>
 </ol>
@@ -35,6 +35,7 @@ let liLast = document.createElement('li');
 liLast.innerHTML = 'append';
 ol.append(liLast); // <ol>의 마지막 항목으로 liLast를 추가 <li>append</li>
 
+zero.insertAdjacentHTML("afterend", "<li>0.5</li>"); // 직접 코드 타이핑해서 HTML을 추가하기
 
 // ‘구식’ 메서드(더이상 사용 X)<이 메서드들은 전부 node를 반환>:
 parent.appendChild(node);
