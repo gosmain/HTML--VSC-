@@ -43,8 +43,7 @@ fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commi
 
 //예시------------------------------------------------------------------------------------------------------------------------------------------
 로고가져오기
-
-let response = await fetch();
+let response = await fetch('/article/fetch/logo-fetch.svg');
 
 let blob = await response.blob();
 
@@ -63,7 +62,7 @@ setTimeout(() => { // 3초 후 이미지를 숨김
 //응답 헤더------------------------------------------------------------------------------------------------------------------------------------------
 응답객체의프로퍼티
 response.status  // 응답의 HTTP코드(예: 200)
-response.ok      // 응답 상태가 200과 299 사이에 있는 경우 true
+response.ok      // 응답 상태가 200과 299 사이에 있는 경우 true (if(!response.ok) throw new Error("")로 에러처리가능)
 response.headers // 맵과 유사한 메서드를 지원하는 HTTP 헤더: 헤더 일부 추출 혹은 전체 순회 가능
 
 예시;
