@@ -1,0 +1,48 @@
+웹소켓(WebSocket)을 사용하면 서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있음.
+이때 데이터는 ‘패킷(packet)’ 형태로 전달되며, 전송은 커넥션 중단과 추가 HTTP 요청 없이 양방향으로 이뤄짐.
+
+이런 특징 때문에 웹소켓은 온라인 게임이나 주식 트레이딩 시스템같이 데이터 교환이 지속적으로 이뤄져야 하는 서비스에 아주 적합함.
+
+웹소켓 커넥션을 만들려면 wss://라는 특수 프로토콜을 사용함
+소켓이 정상적으로 만들어지면 open,message,error,close 등 네 개의 이벤트를 사용할 수 있음
+커넥션이 만들어진 상태에서 무언가를 보내고 싶으면 socket.send(data)를 사용하면 됨
+
+
+<심플 채팅 프로그램 예시:>
+
+<!doctype html>
+<form name = "publish"> // 메세지 보내는곳
+    <input type = "text" name = "message" maxlength = "50"/>
+    <input type = "submit" value = "Send"/>
+</form>
+
+<div id = "messages"></div> // 입력받은 메세지 받는곳
+
+JS에서 해야할것 세가지:
+1. 커넥션 연결
+2. On form submission - socket.send(message) for the message
+3. On incoming message - append it to div#messages
+
+<script>
+    let socket = new WebSocket("wss://javascript.info/article/websocket/chat/ws");
+
+    document.forms.publish.onsubmit = function() {     // form을 통해 메세지 보내기
+        let outgoingMessage = this.message.value;
+
+        socket.send(outgoingMessage);
+        return false;
+    };
+
+    socket.onmessage = function(event) {     // 입력받은 메세지 처리
+        let incomingMessage = event.data;
+        showMessage(incomingMessage);
+    };
+
+    socket.onclose = event => console.log(`Closed ${event.code}`);
+
+    function showMessage(message) {     // div#messages에서 메세지 보여주기
+        let messageElem = document.createElement('div');
+        messageElem.textContent = message;
+        document.getElementById('messages').prepend(messageElem);
+    }
+</script>
