@@ -1,0 +1,33 @@
+// &: JS의 this
+a {
+    color: #ccc; 
+    &.home {     
+        color: #f0F;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+// 변수: if(condition, if_true, if_false)
+$type: ocean;
+
+p { 
+  color: if($type == ocean, blue, black); // color: blue;
+}
+
+
+// mixin(상속)(함수처럼 매개변수 사용가능)
+@mixin circle { // 지름이 50px인 원
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+ }
+  
+.box { // 지름이 50px인 원을 위한 mixin을 include한 후 배경을 추가 지정
+    @include circle;
+    
+    background: #f00;
+}
+

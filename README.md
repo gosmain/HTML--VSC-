@@ -28,5 +28,11 @@ Will make it a habit, clean it up, and build it up little by little 👏
 > 
 > [Chapter 5. Modern Javascript Advanced]
 > 
+> [Chapter 6. NPM]
+> 
+> [Chapter 7. Module Bundler]
+> 
+> [Chapter 8. SCSS]
+> 
 
 ---

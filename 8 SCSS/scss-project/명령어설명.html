@@ -1,0 +1,20 @@
+CSS의 한계와 단점을 보완하여 보다 가독성이 높고 코드의 재사용에 유리한 CSS를 생성하기 위한 CSS의 확장
+
+* Sass(scss)에서 변수를 사용할 수 있다. <변수명은 $로 시작함>
+
+* 지역변수, 전역변수가 존재
+
+* JS의 산술연산자 +,-,*,/,%등등 모두 사용가능함
+
+
+
+<명령어>
+cd scss-project <디렉토리명(폴더명) 불러오기>
+
+1. 트렌스파일링
+sass foo.scss:foo.css <foo.scss를 foo.css로 트랜스파일링>
+
+2. 스타일
+sass src/sass:dist/css <기본값의 css가 dist폴더로 트랜스파일링(생성)>
+sass --style compressed src/sass:dist/css <빈공간이 없는 압축된 스타일의 css파일이 생성됨>
+
