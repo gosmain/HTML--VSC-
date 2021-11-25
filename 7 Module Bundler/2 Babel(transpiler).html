@@ -1,0 +1,12 @@
+Babel을 사용하면 코드를 아래와 같이 ES5 이하의 버전으로 변환할 수 있다
+
+<script>
+// ES6 화살표 함수와 ES7 지수 연산자
+[1, 2, 3].map(n => n ** n);
+
+// ES5
+"use strict";
+[1, 2, 3].map(function (n) {
+    return Math.pow(n, n);
+});
+</script>
