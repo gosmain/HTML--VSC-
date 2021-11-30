@@ -34,5 +34,7 @@ Will make it a habit, clean it up, and build it up little by little 👏
 > 
 > [Chapter 8. SCSS]
 > 
+> [Chapter 9. React]
+> 
 
 ---
