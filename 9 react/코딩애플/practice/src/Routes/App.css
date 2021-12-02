@@ -9,6 +9,11 @@ body {
   padding: 20px;
   background: #eee;
 }
+.font {
+  font-size: 18px;
+  color: tomato;
+  background-color: blanchedalmond;
+}
 .black-nav {
   background: black;
   width: 100%;
