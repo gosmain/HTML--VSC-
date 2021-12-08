@@ -1,0 +1,5 @@
+Ts = JS안에 Type 정의 (코드 동작 전에 타입으로 에러 확인=에러,오타,실수 찾아줌)
+
+JS(리엑트)파일 tsx(타입스크립트)형태로 변형하기 위한 명령어:
+npm install --save typescript @types/node @types/react @types/react-dom 
+@types/jest @types/styled-components @types/react-router-dom 

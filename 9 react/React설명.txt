@@ -1,10 +1,18 @@
 npx create-react-app 폴더명 = 리엑트 폴더 생성
 cd 폴더명 (띄어쓰기있을 시 : "") = 해당 폴더로 이동
 npm start = 리엑트 서버 시작
-npm install react-router-dom = 리엑트 라우터 구현 다운
+npm install react-dom react-router-dom styled-componenets jest recoil react-query
+react-hook-form react-helmet apexcharts react-apexcharts
 
+react-router-dom: 루트들 링크(연결)
+react-helmet: 웹페이지 상단 표시
+react-hook-form: 모든 폼에 대해 유용
+apexcharts: 그래프
+react-query: 
+recoil: 부모요소에서 아래요소로 쉽게 링크
+styled-components: CSS in Js
 
-상세 내용은 코딩애플 - src - App.js 참고
+// React쓰는 가장 큰이유: 중괄호 이용한 데이터 바인딩 쉬움
 
 
 (설명):

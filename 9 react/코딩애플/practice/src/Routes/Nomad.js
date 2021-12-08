@@ -24,8 +24,7 @@ function Nomad() {
         <Button text={"Continue"} />
         <br />
         <ShowHide />
-        <button><Link to="CodingApple">CodingApple</Link></button><br/>
-        <button><Link to="NomadCoins">NomadCoins</Link></button>
+        <button><Link to="/">CodingApple</Link></button><br/>
         <hr />
         <input
           value={keyword}

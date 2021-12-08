@@ -26,8 +26,7 @@ function NomadCoins() {
             ))}
           </select>
         )}
-        <button><Link to="CodingApple">CodingApple</Link></button><br/>
-        <button><Link to="NomadCoins">NomadCoins</Link></button>
+        <button><Link to="/">CodingApple</Link></button><br/>
       </div>
     );
 }

@@ -1,0 +1,4 @@
+Component에 Css적용하는 하나의 방법 (Sass와 매우 흡사)(JS와 CSS로 작성)
+
+명령어: 
+npm install styled-components
