@@ -2,11 +2,7 @@
 
 > Today-I-Learned
 
-:star: Space created to set a career path and organize things properly to be a developer :star:
-
-Will make it a habit, clean it up, and build it up little by little 👏
-
-`HTML` `CSS`  `Javascript` <!--`React` `Typescript` `Node`-->
+`HTML` `CSS`  `Javascript` `React`<!-- `Typescript` `Node`-->
 
 **Created :** 2021.07.19  
 ## To organize what's been studied
