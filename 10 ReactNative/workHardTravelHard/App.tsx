@@ -36,7 +36,7 @@ export default function App() {
     if (text === "") {
       return;
     }
-    const newToDos: any = {
+    const newToDos = {
       ...toDos,
       [Date.now()]: { text, working },
     };
@@ -44,13 +44,13 @@ export default function App() {
     saveToDos(newToDos);
     setText("");
   };
-  const deleteToDo = (key: any) => {
+  const deleteToDo = (key: string) => {
     Alert.alert("Delete To Do", "Are you sure", [
       { text: "Cancel" },
       {
         text: "I'm Sure",
         onPress: () => {
-          const newToDos: any = { ...toDos };
+          const newToDos = { ...toDos };
           delete newToDos[key];
           setToDos(newToDos);
           saveToDos(newToDos);
