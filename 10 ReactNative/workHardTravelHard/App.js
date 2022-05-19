@@ -18,18 +18,18 @@ const STORAGE_KEY = "@toDos";
 export default function App() {
   const [working, setWorking] = useState(true);
   const [text, setText] = useState("");
-  const [toDos, setToDos] = useState<any>({});
+  const [toDos, setToDos] = useState({});
   useEffect(() => {
     loadToDos();
   }, []);
   const travel = () => setWorking(false);
   const work = () => setWorking(true);
-  const onChangeText = (payload: string) => setText(payload);
-  const saveToDos = async (toSave: string) => {
+  const onChangeText = (payload) => setText(payload);
+  const saveToDos = async (toSave) => {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
   };
   const loadToDos = async () => {
-    const s: any = await AsyncStorage.getItem(STORAGE_KEY);
+    const s = await AsyncStorage.getItem(STORAGE_KEY);
     setToDos(JSON.parse(s));
   };
   const addToDo = () => {
@@ -44,7 +44,7 @@ export default function App() {
     saveToDos(newToDos);
     setText("");
   };
-  const deleteToDo = (key: string) => {
+  const deleteToDo = (key) => {
     Alert.alert("Delete To Do", "Are you sure", [
       { text: "Cancel" },
       {
